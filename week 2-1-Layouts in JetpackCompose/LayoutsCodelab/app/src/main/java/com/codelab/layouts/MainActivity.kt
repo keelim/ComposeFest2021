@@ -12,9 +12,12 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Button
 import androidx.compose.material.ContentAlpha
+import androidx.compose.material.Icon
 import androidx.compose.material.LocalContentAlpha
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.TopAppBar
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -58,12 +61,13 @@ fun DefaultPreview() {
 
 @Composable
 fun PhotographCard(modifier:Modifier = Modifier) {
-    Row(modifier
-        .padding(8.dp)
-        .clip(RoundedCornerShape(4.dp))
-        .background(MaterialTheme.colors.onSurface)
-        .clickable(onClick = {})
-        .padding(16.dp)
+    Row(
+        modifier
+            .padding(8.dp)
+            .clip(RoundedCornerShape(4.dp))
+            .background(MaterialTheme.colors.onSurface)
+            .clickable(onClick = {})
+            .padding(16.dp)
     )
      {
         Surface(
@@ -91,5 +95,27 @@ fun PhotographCard(modifier:Modifier = Modifier) {
 fun PhotographCardPreview() {
     LayoutsCodelabTheme {
         PhotographCard()
+    }
+}
+
+@Composable
+fun Slot(){
+    TopAppBar(
+        title ={
+            Text(text = "Page title", maxLines = 2)
+        },
+        navigationIcon = {
+            Icon(myNavIcon)
+        }
+    ) {
+
+    }
+}
+
+@Preview
+@Composable
+fun Sample(){
+    LayoutsCodelabTheme {
+        Slot()
     }
 }
