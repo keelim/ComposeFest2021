@@ -31,9 +31,8 @@ fun MyOwnColumn(
     }
 }
 
-@Preview(showBackground = true)
 @Composable
-fun BodyContent(modifier: Modifier = Modifier) {
+fun BodyContent1(modifier: Modifier = Modifier) {
     MyOwnColumn(modifier.padding(8.dp)) {
         Text("MyOwnColumn")
         Text("plaves items")
