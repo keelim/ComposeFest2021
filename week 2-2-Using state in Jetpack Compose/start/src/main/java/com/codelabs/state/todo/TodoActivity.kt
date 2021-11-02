@@ -33,7 +33,7 @@ class TodoActivity : AppCompatActivity() {
         setContent {
             StateCodelabTheme {
                 Surface {
-                    // TODO: build the screen in compose
+                    TodoActivityScreen(todoViewModel)
                 }
             }
         }
@@ -41,13 +41,14 @@ class TodoActivity : AppCompatActivity() {
 }
 
 @Composable
-private fun TodoActivityScreen(todoViewModel: TodoViewModel){
-    val items = listOf<TodoItem>()
+private fun TodoActivityScreen(todoViewModel: TodoViewModel) {
     TodoScreen(
-        items = items,
-        onAddItem = {},
-        onRemoveItem = {}
+        items = todoViewModel.todoItems,
+        currentlyEditing = todoViewModel.currentEditItem,
+        onAddItem = todoViewModel::addItem,
+        onRemoveItem = todoViewModel::removeItem,
+        onStartEdit = todoViewModel::onEditItemSelected,
+        onEditItemChange = todoViewModel::onEditItemChange,
+        onEditDone = todoViewModel::onEditDone
     )
 }
-
-
