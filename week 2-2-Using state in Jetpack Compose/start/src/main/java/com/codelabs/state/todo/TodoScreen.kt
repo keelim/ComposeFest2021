@@ -57,7 +57,6 @@ fun TodoScreen(
 ) {
     Column {
         TodoItemInputBackground(elevate = true, modifier = Modifier.fillMaxWidth()) {
-            TodoItemInput(onItemComplete = onAddItem)
         }
 
         LazyColumn(
@@ -203,10 +202,6 @@ fun TodoItemInput(
         }
     }
 }
-
-@Preview(showBackground = true)
-@Composable
-fun PreviewTodoItemInput() = TodoItemInput(onItemComplete = {})
 
 @Composable
 fun TodoInputTextField(text: String, onTextChange: (String) -> Unit, modifier: Modifier) {
