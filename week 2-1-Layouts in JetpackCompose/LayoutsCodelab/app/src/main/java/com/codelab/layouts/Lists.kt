@@ -68,7 +68,7 @@ fun ScrollingList(){
     }
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 fun PreviewView(){
     ScrollingList()
