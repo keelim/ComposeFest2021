@@ -299,6 +299,12 @@ fun PreviewTodoScreen() {
     TodoScreen(items, null, {}, {}, {}, {}, {})
 }
 
+@Composable
+fun TodoInputTextField(modifier:Modifier){
+    val (text, setText) = remember { mutableStateOf("")}
+    TodoInputText(text, setText, modifier)
+}
+
 @Preview
 @Composable
 fun PreviewTodoItemInput() = TodoItemEntryInput(onItemComplete = { })
